@@ -124,16 +124,25 @@ func main() {
 	// ASCII 문자에 대해서는 rune 값은 byte 값과 같음
 
 	// 다양한 문자를 바이트로 표현하기 위해 rune이라는 타입을 도입했다고 이해해도 될까?
-	// Go가 UTF-8을 쓰기 때문이라는 말이 같이 있거든?
+
 	a := "아버지가방에들어가신다"
 	a_rune := []rune(a)
-	// [50500 48260 51648 44032 48169 50640 46308 50612 44032 49888 45796], []int32
+
 	a_byte := []byte(a)
+
+	fmt.Printf("%v, %T\n", a_rune, a_rune)
+	// [50500 48260 51648 44032 48169 50640 46308 50612 44032 49888 45796], []int32
+	fmt.Printf("%v, %T\n", string(a_rune[3]), a_rune[3]) // 가, int32
+
+	fmt.Printf("%v, %T\n", a_byte, a_byte)
+
+	fmt.Printf("%v, %T\n", string(a_byte[3]), a_byte[3]) // ë, uint8
+
 	/* [236 149 132 235 178 132 236 167 128 234 176 128 235 176 169 236 151 144 235 147 164
 	236 150 180 234 176 128 236 139 160 235 139 164], []uint8 */
-	fmt.Printf("%v, %T\n", a_rune, a_rune) // 44032, int32
-	fmt.Printf("%v, %T\n", a_byte, a_byte)
+
 	// var b string = '가'
 	// fmt.Printf("%v, %T\n", b, b) // cannot use '가' (untyped rune constant 44032) as string value in variable declaration)
 
+	// 대충 드는 생각으로는, 저런 방법을 취한다면 글자를 슬라이싱할 때 Rune 방법이 훨씬 편함.
 }

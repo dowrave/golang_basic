@@ -11,3 +11,4 @@ Golang의 장점
 Strong & Static - 변수의 유형은 시간이 지나도 바뀌지 않음. int로 선언되면 int만 넣을 수 있다
 커뮤니티 활성화
 핵심 특징 : 단순함(Simplicity), 빠른 컴파일 속도, Garbage Collected, Concurrency, Compile to standalone binary
+그냥 넘겼다..
