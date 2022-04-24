@@ -41,17 +41,17 @@ import (
 
 // iota 활용 예제 : bit shifting
 // 여러 변수를 이런 식으로 지정할 때 매우 좋긴 하겠다
-// const (
-// 	_  = iota
-// 	KB = 1 << (10 * iota) // 1 << 10
-// 	MB                    // 1 << 20
-// 	GB                    // 1 << 30
-// 	TB
-// 	PB
-// 	EB
-// 	ZB
-// 	YB
-// )
+const (
+	_  = iota
+	KB = 1 << (10 * iota) // 1 << 10
+	MB                    // 1 << 20
+	GB                    // 1 << 30
+	TB
+	PB
+	EB
+	ZB
+	YB
+)
 
 // iota 활용 예제 2
 const (
@@ -121,11 +121,11 @@ func main() {
 	// _를 쓰는 건 메모리를 아끼는 측면에서도 좋음 : 할당하는 주소가 없기 때문
 
 	// iota 활용 예제 : bitshifting
-	// fileSize := 4000000000.
-	// fmt.Printf("%.2fGB",
-	// 	fileSize/GB) // GB값이 어떻게 지정되었느냐 보면
-	// 1 << (10 * iota)
-	// 10 * iota = 30
+	fileSize := 4000000000.
+	fmt.Printf("%.2fGB",
+		fileSize/GB) // GB값이 어떻게 지정되었느냐 보면
+	1 << (10 * iota)
+	10 * iota = 30
 	// 즉 왼쪽으로 30자리 밀라는 뜻이잖아? 그럼 2^30번째 자리에 1이 있는 거임
 
 	// iota 활용 예제 2
