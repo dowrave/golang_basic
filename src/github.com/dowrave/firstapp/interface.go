@@ -54,15 +54,16 @@ package main
 // }
 
 // 5. Type Assertion : x.(Type) 식으로 표현되며, 이는 x가 nil이 아니고, Type에 속한다는 점을 확인하는 표현이다.
+// 만약 x가 nil 혹은 Type에 속하지 않는다면 runtime error이 발생한다.
 func main() {
 	var a interface{} = 1
 
 	i := a // 별도로 지정되지 않는다면 interface{}는 dynamic type이다. 포인터 주소가 출력됨.
 	j := a.(int)
 
-	println(a)
-	println(i) // 포인터 주소
-	println(j) //
+	println(a) // 포인터 주소 출력
+	println(i) // 포인터 주소 출력
+	println(j) // 값 출력
 }
 
 // func main() {
