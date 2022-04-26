@@ -8,21 +8,21 @@ import (
 func main() {
 	// 1. Controlflow
 	// 보통의 작업 과정은 위부타 아래로 진행됨
-	// fmt.Println("start")
-	// fmt.Println("middle")
-	// fmt.Println("end")
+	fmt.Println("start")
+	fmt.Println("middle")
+	fmt.Println("end")
 
 	// 근데 defer를 넣으면 가장 뒤로 밀려남
-	// fmt.Println("start")
-	// defer fmt.Println("middle")
-	// fmt.Println("end")
+	fmt.Println("start")
+	defer fmt.Println("middle")
+	fmt.Println("end")
 	// 작업 순서 : 위부터 아래 / 근데 defer가 있다는 걸 인식하고 지나감 -> main 함수가 "종료"된 이후 defer를 찾아서 실행함
 	// 즉, defer는 main함수의 "끝"으로 보내는 게 아니라 "끝난 다음"으로 보냄
 
 	// 근데 defer는 이런 특징도 있음 : LIFO로 실행됨
-	// defer fmt.Println("start")
-	// defer fmt.Println("middle")
-	// defer fmt.Println("end")
+	defer fmt.Println("start")
+	defer fmt.Println("middle")
+	defer fmt.Println("end")
 
 	// defer 사용 예제
 	// robots.txt를 가져오는 예제임
